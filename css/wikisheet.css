@@ -4,7 +4,7 @@ div {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 25px;
+  font-size: 16px;
 }
 div {
   background-color: grey;
@@ -25,42 +25,18 @@ input {
   background-color: #799fbe;
   border-radius: 10px;  
   color:#394569;
-  }
-
-  #searchForm input {
-    display: inline-block;
-    width: 50%;
-    height: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-    border: 0;
-    
-    padding: 5px;
-    margin: 7px 10px;
+  display: inline-block;
+  height: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: 0;
+  width: 50%;
+  padding: 5px;
+//*  margin: 7px 10px; *//
     
 }
 
  button {
-   border-radius: 5px;
-}
-
-#currentDetailsWrapper {
-    width: 100%;
-    line-height: 40px;
-    padding: 0 20px;
-    background-color: rgba(238,238,238,.35);
- 
-    overflow: hidden;
-}
-
-#currentDetails {
-    display: inline-flex;
-    position: relative;
-    text-align: center;
-    left: -10px;
-    white-space: nowrap;
-    font-size: 14px;
-    margin: 0 auto;
-    max-width: 750px;
+   border-radius: 25px;
 }
