@@ -16,18 +16,11 @@ div {
   transform: translate(-50%,-50%);
 }
 
-#img , #temp, #toggle {
-  
-  display: inline;
-  justify-content: bottom;
-    
-  }
+
 input {
   background-color: #799fbe;
   border-radius: 10px;  
   font-size: 25px;
   color:#394569;
   }
-#cond {
-  font-size: 19px;
-}
+
