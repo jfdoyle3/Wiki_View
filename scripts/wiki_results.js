@@ -10,10 +10,10 @@ $("#rPage").on("click", function () {
 
 document.getElementById('search').addEventListener('click', function(){
     var sText=document.getElementById('sBox').value;
-    console.log(sText);
+    // console.log(sText);
 // var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
-var url = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
 
 
 // Create a request variable and assign a new XMLHttpRequest object to it.
@@ -49,7 +49,10 @@ xhr.onload = function() {
     // Pulling out the titles of each page
 
     for (var i in data.query.pages) {
-        console.log(data.query.pages[i].title);
+
+        //console.log(data.query.pages[i].title);
+        document.write("<li>"+data.query.pages[i].title+"</li>");
+
     }
 
 }
