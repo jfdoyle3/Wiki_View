@@ -9,7 +9,8 @@ $("#rPage").on("click", function () {
 });
 
 document.getElementById('search').addEventListener('click', function(){
-    var sText=document.getElementById('sBox').value
+ var sText=document.getElementById('sBox').value
+
 // var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
 var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
@@ -46,9 +47,14 @@ xhr.onload = function() {
 
     // Loop through the data object
     // Pulling out the titles of each page
+    
   for (var i in data.query.pages) {
-    $(".container").append("<p>"+data.query.pages[i].title+"</p>");    
-      console.log(data.query.pages[i].title);
+    var title =data.query.pages[i].title
+    var link="https://en.wikipedia.org/wiki/"+title;
+    var tag="<a href="+link+">"+title+"</a>";
+  $(".container-fluid").append("<span>");
+  $(".container-fluid").append(tag);
+  $(".container-fluid").append("</span>");
     
  }
 }
