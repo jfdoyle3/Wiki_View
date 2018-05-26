@@ -1,8 +1,8 @@
-body {
+/* body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
-}
-div {
+  font-size: 16px; 
+} */
+/* #searchBox {
   display: block;
   background-color: grey;
   position:absolute;
@@ -16,10 +16,12 @@ div {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
-
-
+*/
+div {
+  text-align: center;
+}
 input {
-  background-color: #799fbe;
+  background-color: lightgrey;
   border-radius: 10px;  
   color:#394569;
   display: inline-block;

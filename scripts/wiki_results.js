@@ -9,8 +9,7 @@ $("#rPage").on("click", function () {
 });
 
 document.getElementById('search').addEventListener('click', function(){
-    var sText=document.getElementById('sBox').value;
-    // console.log(sText);
+    var sText=document.getElementById('sBox').value
 // var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
 var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
@@ -40,21 +39,18 @@ xhr.onload = function() {
     var data = JSON.parse(this.response);
 
     // Log the data object
-  //  console.log(data);
+  //console.log("Data object:"+data);
 
     // Log the page objects
-  //  console.log(data.query.pages)
+ // console.log("Query:"+data.query.pages);
 
     // Loop through the data object
     // Pulling out the titles of each page
-
-    for (var i in data.query.pages) {
-
-        //console.log(data.query.pages[i].title);
-        document.write("<li>"+data.query.pages[i].title+"</li>");
-
-    }
-
+  for (var i in data.query.pages) {
+    $(".container").append("<p>"+data.query.pages[i].title+"</p>");    
+      console.log(data.query.pages[i].title);
+    
+ }
 }
 
 // Send request to the server
