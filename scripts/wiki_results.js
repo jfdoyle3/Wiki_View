@@ -5,7 +5,10 @@
 
 // Random Page Button
 $("#rPage").on("click", function () {
-    location.href = "https://en.wikipedia.org/wiki/Special:Random";
+  if ($("sBox").keypress()==13){
+    $("search").click();
+  }
+    location.href="https://en.wikipedia.org/wiki/Special:Random";
 });
 
 document.getElementById('search').addEventListener('click', function(){
@@ -13,7 +16,7 @@ document.getElementById('search').addEventListener('click', function(){
 
 // var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
+var url="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
 
 
 // Create a request variable and assign a new XMLHttpRequest object to it.
@@ -52,9 +55,9 @@ xhr.onload = function() {
     var title =data.query.pages[i].title
     var link="https://en.wikipedia.org/wiki/"+title;
     var tag="<a href="+link+">"+title+"</a>";
-  $(".container-fluid").append("<span>");
+  $(".container-fluid").append("<li>");
   $(".container-fluid").append(tag);
-  $(".container-fluid").append("</span>");
+  $(".container-fluid").append("</li>");
     
  }
 }
