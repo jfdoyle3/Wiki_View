@@ -37,7 +37,7 @@ input {
 button { 
   border-radius: 25px;
 }
-.card {
-  width: 18rem;
-  
+ul {
+  list-style-type: none;
+  text-align: center;
 }
