@@ -5,10 +5,7 @@
 
 // Random Page Button
 $("#rPage").on("click", function () {
-  if ($("sBox").keypress()==13){
-    $("search").click();
-  }
-    location.href="https://en.wikipedia.org/wiki/Special:Random";
+ window.open("https://en.wikipedia.org/wiki/Special:Random");
 });
 
 document.getElementById('search').addEventListener('click', function(){
@@ -52,7 +49,7 @@ xhr.onload = function() {
     // Pulling out the titles of each page
     
   for (var i in data.query.pages) {
-    var title =data.query.pages[i].title
+    var title =data.query.pages[i].title;
     var link="https://en.wikipedia.org/wiki/"+title;
     var tag="<a href="+link+">"+title+"</a>";
   $(".container-fluid").append("<li>");
