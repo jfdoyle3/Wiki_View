@@ -29,7 +29,8 @@ xhr.onload = function() {
    
   for (var i in data.query.pages) {
     var title =data.query.pages[i].title;
-    var link="https://en.wikipedia.org/wiki/"+title;
+    
+    var link="https://en.wikipedia.org/wiki/"+title.replace(/[\s]/g, "_");
     var tag="<a href="+link+">"+title+"</a>";
     var sli=document.createElement("li");
    sli.innerHTML=(tag);
