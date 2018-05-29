@@ -10,59 +10,34 @@ $("#rPage").on("click", function () {
 
 document.getElementById('search').addEventListener('click', function(){
  var sText=document.getElementById('sBox').value
-
+$("#results").empty();
 // var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
 var url="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
 
-$.getJSON("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles="+sText+"&rvprop=content&format=json&rvsection=0&rvparse=1&callback=?
+$.getJSON("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles="+sText+"&rvprop=content&format=json&rvsection=0&rvparse=1&callback=?");
 
 
-
-// Create a request variable and assign a new XMLHttpRequest object to it.
-// XMLHttpRequests allow you to retrieve data from a server without
-// needing to refresh the page. They're used heavily in Ajax programming.
-// Despite the name, it's used for more than just XML
 var xhr = new XMLHttpRequest();
 
-// Open a new connection, using the GET request on the URL endpoint
-// Providing 3 arguments (GET/POST, The URL, Async True/False)
 xhr.open('GET', url, true);
 
-
-//xhr.setRequestHeader("Origin", "http://en.wikipedia.org");
-//xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-//xhr.setRequestHeader("Accept", "application/json; charset=UTF-8");
-
-
-
-// Once request has loaded...
 xhr.onload = function() {
 
-    // Parse the request into JSON
     var data = JSON.parse(this.response);
 
-    // Log the data object
-  //console.log("Data object:"+data);
-
-    // Log the page objects
- // console.log("Query:"+data.query.pages);
-
-    // Loop through the data object
-    // Pulling out the titles of each page
-    
+   
   for (var i in data.query.pages) {
     var title =data.query.pages[i].title;
     var link="https://en.wikipedia.org/wiki/"+title;
     var tag="<a href="+link+">"+title+"</a>";
-  $(".container-fluid").append("<li>");
-  $(".container-fluid").append(tag);
-  $(".container-fluid").append("</li>");
+  $("#results").append("<div id='ss'>");
+  $("#results").append(tag);
+  $("#results").append("</div>");
     
  }
 }
 
-// Send request to the server
 xhr.send();
 
 });
