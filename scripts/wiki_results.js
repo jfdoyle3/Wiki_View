@@ -31,10 +31,9 @@ xhr.onload = function() {
     var title =data.query.pages[i].title;
     var link="https://en.wikipedia.org/wiki/"+title;
     var tag="<a href="+link+">"+title+"</a>";
-  $("#results").append("<div id='ss'>");
-  $("#results").append(tag);
-  $("#results").append("</div>");
-    
+    var sli=document.createElement("li");
+   sli.innerHTML=(tag);
+   document.getElementById("results").appendChild(sli);
  }
 }
 
