@@ -11,11 +11,10 @@ $("#rPage").on("click", function () {
 document.getElementById('search').addEventListener('click', function(){
  var sText=document.getElementById('sBox').value
 $("#results").empty();
-// var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+ sText+"'";
 
 var url="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='"+sText+"'";
 
-$.getJSON("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles="+sText+"&rvprop=content&format=json&rvsection=0&rvparse=1&callback=?");
+
 
 
 var xhr = new XMLHttpRequest();
