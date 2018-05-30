@@ -5,16 +5,8 @@ body {
  #searchBox {
   display: block;
   background-color: grey;
- /* position:absolute; */
   color:#394569;
-/*  border-radius: 25px; */
   border-color: black;
-/*  top:50%; */
-/*  left:50%; */
-/*  padding:15px; */
-/*  -ms-transform: translateX(-50%) translateY(-50%); */
-/*  -webkit-transform: translate(-50%,-50%); */
-/*  transform: translate(-50%,-50%); */
 }
 
 div {
@@ -39,21 +31,6 @@ input  {
 button { 
   border-radius: 25px;
 }
-/* #ss {
-  background-color: lightgrey;
-  border-radius: 10px;  
-  color:#394569;
-  height: 30px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  border: 25px;
-  width: 50%;
-  padding: 5px;
-  text-align: center;
-  margin-left: 319px;
-  margin-top:  10px;
-} */
 li {
  
   list-style-type: none;
